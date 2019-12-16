@@ -1,0 +1,38 @@
+<div class="row">
+    <div class="col-md-4">
+        <h3>Seleccione Archivo</h3>
+
+        <div appNgDropFiles [archivosUpload]="ArchivosPadre" (mouseOnElement)="onElement = $event" class="well drop-zone" [ngClass]="{'file-over': onElement}">
+            <h4>Deje aqui los archivos</h4>
+            <img src="../../../assets/img/image-icon-png-2.png">
+        </div>
+    </div>
+
+    <div class="col-md-8">
+        <h4>Cargar Archivo</h4>
+        <button (click)="GuardarImagenes()" class="btn btn-success"> Upload photos</button>
+        <button class="btn btn-danger ml-3"> Clear photos</button>
+
+        <table class="table text-center">
+            <thead class="thead-dark">
+                <tr>
+                    <th>File Name</th>
+                    <th>Size</th>
+                    <th>Progress</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let archivo of ArchivosPadre">
+                    <th> {{archivo.nombreArchivo}} </th>
+                    <th> {{archivo.size/1024/1024|number:'.2-2'}} MB</th>
+                    <th>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-striped bg-info" role="progressbar" aria-valuenow="50" aria-valuemin="25" [ngStyle]="{'width': archivo.progress + '%'}" aria-valuemax="100"> {{archivo.progress}} </div>
+                        </div>
+                    </th>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</div>

@@ -1,1 +1,26 @@
 /* You can add global styles to this file, and also import other style files */
+
+.drop-zone {
+    border: dotted 3px lightgray;
+    opacity: 0.5;
+    color: #666;
+    text-align: center;
+}
+
+img {
+    width: 200px;
+    height: 200px;
+}
+
+.file-over {
+    border: dotted 3px aqua;
+}
+
+.table {
+    margin-top: 30px;
+    width: 100%;
+}
+
+.text-green {
+    color: green;
+}
